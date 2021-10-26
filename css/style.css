@@ -1,0 +1,23 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+#textgame,
+#numeroutente,
+#numeropc{
+   padding-bottom: 10px;
+}
+
+div{
+   margin: 15px;
+}
+
+#numeropc{
+   color: red;
+}
+
+p{
+   font-size: 14px;
+}

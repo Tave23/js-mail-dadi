@@ -66,7 +66,12 @@ if (mailClasse.includes(mailUtente)) {
    else if(sceltaDadoUtente < sceltaDadoPc) {
       document.getElementById("vincitore").innerHTML = 
       "Peccato, hai perso! Il computer con il suo " + sceltaDadoPc + " ha battuto il tuo " + sceltaDadoPc + ". Ritenta sarai più fortunato.";
-   };
+   }
+
+   else {
+      document.getElementById("vincitore").innerHTML = 
+      "Wow, un pareggio! Il computer ha fatto " + sceltaDadoPc + " pareggiando il tuo " + sceltaDadoPc + ". Ritenta sarai più fortunato.";
+   }
    
 }
 
