@@ -39,13 +39,40 @@ let mailUtente = prompt("Inserire un Email per giocare a dadi");
 
 if (mailClasse.includes(mailUtente)) {
    document.getElementById("risposta").innerHTML =
-   mailUtente + " è valida";
+   "L'email " + mailUtente + " è valida";
+   document.getElementById("textgame").innerHTML =
+   "Puoi finalmente giocare a dadi! Buona fortuna!";
 
-   let sceltaDado = Math.floor(Math.random());
-   console.log(sceltaDado);
- }
+   let sceltaDadoUtente = Math.floor(Math.random()*6+1);
+   console.log(sceltaDadoUtente);
+   document.getElementById("numeroutente").innerHTML = 
+   "Il tuo numero è: " + sceltaDadoUtente;
+
+   let sceltaDadoPc = Math.floor(Math.random()*6+1);
+   console.log(sceltaDadoPc);
+   document.getElementById("numeropc").innerHTML = 
+   "Il numero del computer è: " + sceltaDadoPc;
+
+   if (sceltaDadoUtente > sceltaDadoPc) {
+      document.getElementById("vincitore").innerHTML = 
+      "Complimenti, hai vinto! Il tuo " + sceltaDadoUtente + " ha battuto il " + sceltaDadoPc + " del computer.";
+   }
+
+   else if(sceltaDadoUtente < sceltaDadoPc) {
+      document.getElementById("vincitore").innerHTML = 
+      "Peccato, hai perso! Il computer con il suo " + sceltaDadoPc + " ha battuto il tuo " + sceltaDadoPc + ". Ritenta sarai più fortunato.";
+   };
+   
+}
 
 else {
    document.getElementById("risposta").innerHTML =
    mailUtente + " NON è valida";
-}
+
+   document.getElementById("numeroutente").innerHTML = 
+   "Non puoi giocare a dadi se l'Email non è valida!";
+
+   document.getElementById("numeropc").innerHTML = 
+   "Nemmeno il computer ha voglia di giocare se non inserisci un Email valida...";
+};
+
